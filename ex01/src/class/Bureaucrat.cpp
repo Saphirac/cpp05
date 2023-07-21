@@ -86,20 +86,45 @@ void	Bureaucrat::decrementeGrade(void)
 	++this->_grade;
 }
 
+
+/**
+ * @brief signForm can throw the TooLowException of beSigned.
+ * 
+ * @param toSign 
+ */
+void	Bureaucrat::signForm(Form &toSign)
+{
+	if (DEBUG)
+		std::cout << "Bureaucrat signForm member function called\n";
+	if (toSign.getIsSigned() == true)
+	{
+		std::cout << this->_name << " couldn't sign " << toSign.getName()
+		<< "because form is already signed.\n";
+	}
+	toSign.beSigned(*this);
+	if (toSign.getIsSigned() == true)
+		std::cout << this->_name << " signed " << toSign.getName() << ".\n";
+	else if (this->_grade > toSign.getSignGrade())
+	{
+		std::cout << this->_name << " couldn't sign " << toSign.getName()
+		<< "because grade is insuffisant.\n";
+	}
+}
+
 // Exceptions
 
 char const *Bureaucrat::GradeTooHighException::what(void) const throw()
 {
 	if (DEBUG)
 		std::cout << "Bureaucrat GradeTooHighException thrown\n";
-	return "Grade is too high\n";
+	return "Bureaucrat grade is too high\n";
 }
 
 char const *Bureaucrat::GradeTooLowException::what(void) const throw()
 {
 	if (DEBUG)
 		std::cout << "Bureaucrat GradeTooLowException thrown\n";
-	return "Grade is too low\n";
+	return "bureaucrat grade is too low\n";
 }
 
 // Operators

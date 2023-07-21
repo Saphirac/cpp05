@@ -19,6 +19,9 @@
 
 # include <string>
 # include <iostream>
+# include "Form.hpp"
+
+class	Form;
 
 class	Bureaucrat
 {
@@ -50,6 +53,7 @@ public:
 
 	void	incrementeGrade(void);
 	void	decrementeGrade(void);
+	void	signForm(Form &tosign);
 
 	//operator
 	Bureaucrat	&operator=(Bureaucrat const &src);
