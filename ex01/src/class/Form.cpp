@@ -92,7 +92,7 @@ void	Form::beSigned(Bureaucrat const &b)
 {
 	if (DEBUG)
 		std::cout << "Form beSigned member function called\n";
-	if (b.getGrade() >= this->_signGrade)
+	if (b.getGrade() > this->_signGrade)
 		throw Form::GradeTooLowException();
 	if (this->_isSigned == false)
 		this->_isSigned = true;
@@ -137,5 +137,5 @@ std::ostream	&operator<<(std::ostream &o, Form const &src)
 {
 	return o << src.getName() << " form isSigned : " << std::boolalpha
 	<< src.getIsSigned() << ", Form signGrade : " << src.getSignGrade()
-	<< ", Form execGrade : " << src.getExecGrade() << ", ";
+	<< ", Form execGrade : " << src.getExecGrade() << ".\n";
 }
