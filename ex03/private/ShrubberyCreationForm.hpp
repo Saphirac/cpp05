@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
 # include "AForm.hpp"
 
-class	RobotomyRequestForm : public AForm
+class	ShrubberyCreationForm : public AForm
 {
 private :
 
@@ -23,19 +23,19 @@ private :
 
 public :
 
-	RobotomyRequestForm(void);
-	RobotomyRequestForm(RobotomyRequestForm const &src);
-	RobotomyRequestForm(std::string const &target);
-	virtual	~RobotomyRequestForm(void);
+	ShrubberyCreationForm(void);
+	ShrubberyCreationForm(ShrubberyCreationForm const &src);
+	ShrubberyCreationForm(std::string const &target);
+	virtual	~ShrubberyCreationForm(void);
 
-	std::string	const	&getTarget(void) const;
+	std::string const	&getTarget(void) const;
 
 	virtual void	beSigned(Bureaucrat const &b);
-	virtual void	beExecuted(Bureaucrat const &b);
+	virtual void	execute(Bureaucrat const &b) const;
 
-	RobotomyRequestForm	&operator=(RobotomyRequestForm const &src);
+	ShrubberyCreationForm	&operator=(ShrubberyCreationForm const &src);
 };
 
-std::ostream	&operator<<(std::ostream &o, RobotomyRequestForm const &src);
+std::ostream	&operator<<(std::ostream &o, ShrubberyCreationForm const &src);
 
 #endif

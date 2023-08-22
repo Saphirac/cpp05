@@ -6,7 +6,7 @@
 #    By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/24 23:20:21 by mcourtoi          #+#    #+#              #
-#    Updated: 2023/08/22 18:29:19 by mcourtoi         ###   ########.fr        #
+#    Updated: 2023/08/22 20:08:09 by mcourtoi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ RM			=	rm -rf
 ######################################
 #             EXECUTABLE             #
 ######################################
-NAME		=	AForm
+NAME		=	Intern
 
 #######################################
 #             DIRECTORIES             #
@@ -40,6 +40,7 @@ SRC			=									\
 					PresidentialPardonForm.cpp	\
 					RobotomyRequestForm.cpp		\
 					ShrubberyCreationForm.cpp	\
+					Intern.cpp					\
 				}								\
 				main.cpp
 

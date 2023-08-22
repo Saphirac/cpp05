@@ -99,16 +99,16 @@ void	Bureaucrat::signForm(Form &toSign)
 	if (toSign.getIsSigned() == true)
 	{
 		std::cout << this->_name << " couldn't sign " << toSign.getName()
-		<< "because form is already signed.\n";
+		<< " because form is already signed.\n";
+	}
+	else if (this->_grade > toSign.getSignGrade())
+	{
+		std::cout << this->_name << " couldn't sign " << toSign.getName()
+		<< " because grade is insuffisant.\n";
 	}
 	toSign.beSigned(*this);
 	if (toSign.getIsSigned() == true)
 		std::cout << this->_name << " signed " << toSign.getName() << ".\n";
-	else if (this->_grade > toSign.getSignGrade())
-	{
-		std::cout << this->_name << " couldn't sign " << toSign.getName()
-		<< "because grade is insuffisant.\n";
-	}
 }
 
 // Exceptions

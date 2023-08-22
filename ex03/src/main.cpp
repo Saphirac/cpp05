@@ -11,25 +11,20 @@
 /* ************************************************************************** */
 
 #include <cstdlib>
-#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 static void	__test0(void)
 {
 	try
 	{
-		Bureaucrat				b("Delphine", 137);
-		ShrubberyCreationForm	f("FoodTruck");
+		Intern	i;
+		AForm	*f;
 
-		std::cout << b << std::endl;
-		std::cout << f << std::endl;
-
-		b.signForm(f);
-		b.executeForm(f);
+		f = i.makeForm("shrubbery creation", "Gandalf");
+		std::cout << *f << std::endl;
+		delete f;
 	}
-	catch (std::exception const &e)
+	catch (std::exception &e)
 	{
 		std::cerr
 		<< "Error: "
@@ -42,16 +37,14 @@ static void	__test1(void)
 {
 	try
 	{
-		Bureaucrat			b("Melissa", 1);
-		RobotomyRequestForm	f("Hoodie");
+		Intern	i;
+		AForm	*f;
 
-		std::cout << b << std::endl;
-		std::cout << f << std::endl;
-
-		b.signForm(f);
-		b.executeForm(f);
+		f = i.makeForm("robotomy request", "Frodo");
+		std::cout << *f << std::endl;
+		delete f;
 	}
-	catch (std::exception const &e)
+	catch (std::exception &e)
 	{
 		std::cerr
 		<< "Error: "
@@ -64,16 +57,34 @@ static void	__test2(void)
 {
 	try
 	{
-		Bureaucrat				b("Bibiche", 2);
-		PresidentialPardonForm	f("Reach");
+		Intern	i;
+		AForm	*f;
 
-		std::cout << b << std::endl;
-		std::cout << f << std::endl;
-
-		b.signForm(f);
-		b.executeForm(f);
+		f = i.makeForm("presidential pardon", "Sauron");
+		std::cout << *f << std::endl;
+		delete f;
 	}
-	catch (std::exception const &e)
+	catch (std::exception &e)
+	{
+		std::cerr
+		<< "Error: "
+		<< e.what()
+		<< std::endl;
+	}
+}
+
+static void	__test3(void)
+{
+	try
+	{
+		Intern	i;
+		AForm	*f;
+
+		f = i.makeForm("wtf is this ??", "Gollum");
+		std::cout << *f << std::endl;
+		delete f;
+	}
+	catch (std::exception &e)
 	{
 		std::cerr
 		<< "Error: "
@@ -90,5 +101,7 @@ int	main(void)
 	__test1();
 	std::cout << "-----------------------------------------------" << std::endl;
 	__test2();
+	std::cout << "-----------------------------------------------" << std::endl;
+	__test3();
 	return EXIT_SUCCESS;
 }

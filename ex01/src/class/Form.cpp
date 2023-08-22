@@ -119,8 +119,8 @@ char const *Form::GradeTooLowException::what(void) const throw()
 char const *Form::AlreadySignedException::what(void) const throw()
 {
 	if (DEBUG)
-		std::cout << "Form GradeTooLowException thrown\n";
-	return "Form grade is too low\n";
+		std::cout << "Form AlreadySignedException thrown\n";
+	return "Form is already signed\n";
 }
 
 // Operators

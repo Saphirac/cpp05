@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcourtoi <mcourtoi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include "AForm.hpp"
 
-class	ShrubberyCreationForm : public AForm
+class	RobotomyRequestForm : public AForm
 {
 private :
 
@@ -23,19 +23,19 @@ private :
 
 public :
 
-	ShrubberyCreationForm(void);
-	ShrubberyCreationForm(ShrubberyCreationForm const &src);
-	ShrubberyCreationForm(std::string const &target);
-	virtual	~ShrubberyCreationForm(void);
+	RobotomyRequestForm(void);
+	RobotomyRequestForm(RobotomyRequestForm const &src);
+	RobotomyRequestForm(std::string const &target);
+	virtual	~RobotomyRequestForm(void);
 
-	std::string const	&getTarget(void) const;
+	std::string	const	&getTarget(void) const;
 
 	virtual void	beSigned(Bureaucrat const &b);
 	virtual void	execute(Bureaucrat const &b) const;
 
-	ShrubberyCreationForm	&operator=(ShrubberyCreationForm const &src);
+	RobotomyRequestForm	&operator=(RobotomyRequestForm const &src);
 };
 
-std::ostream	&operator<<(std::ostream &o, ShrubberyCreationForm const &src);
+std::ostream	&operator<<(std::ostream &o, RobotomyRequestForm const &src);
 
 #endif
